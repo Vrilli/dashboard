@@ -84,7 +84,7 @@ const AirPollutionGraph = () => {
                 },
                 ticks: {
                     font: {
-                        size: 12,
+                        size: 13,
                     },
                 },
             },
