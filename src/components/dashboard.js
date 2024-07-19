@@ -1,12 +1,11 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { HiOutlineSearch } from "react-icons/hi";
+import React, { useEffect, useState } from 'react';
+
 
 
 const Dashboard = () => {
-  const [data, setData] = useState("");
   const [loading, setLoading] = useState(false);
   const [climate, setClimate] = useState({});
-  const inputRef = useRef(null);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,38 +19,12 @@ const Dashboard = () => {
   }, []);
 
 
-
-  const buscar = async (evento) => {
-    if (evento.key === "Enter") {
-      setLoading(true);
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?appid=29dab4e98abedbf3cacd8aa03078a91d`);
-      const result = await response.json();
-      setClimate(result);
-      setData("");
-      console.log(result);
-      setLoading(false);
-    }
-  };
-
   return (
     <>
       {loading ? (
         <p className='loading'>Loading...</p>
       ) : (
         <div className="container">
-          <div>
-            <input
-              ref={inputRef}
-              type="text"
-              className="search"
-              placeholder="Search Fey"
-              onChange={e => setData(e.target.value)}
-              value={data}
-              onKeyPress={buscar}
-            />
-            <HiOutlineSearch className="search-icon" />
-          </div>
-
           {climate.main && (
             <div className="city">
               <h2 className="city-name">

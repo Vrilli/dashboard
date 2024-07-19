@@ -72,7 +72,7 @@ const AirPollutionGraph = () => {
                 }
             },
         },
-         scales: {
+        scales: {
             x: {
                 title: {
                     display: true,
@@ -109,7 +109,10 @@ const AirPollutionGraph = () => {
 
     return (
         <div className='pollution'>
-            <Bar className='pollution-card' data={data} options={options} />
+            <h1 className='title'>AirPollutionGraph</h1>
+            <div className='pollution-container'>
+                <Bar className='pollution-card' data={data} options={options} />
+            </div>
         </div>
     );
 };

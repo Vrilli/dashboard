@@ -13,10 +13,10 @@ const LeftNav = () => {
     <nav className="left-nav">
       <ul>
         <li><Link to="/dashboard"><TbHomeMove /></Link></li>  
-        <li><Link to="/profile"><MdYoutubeSearchedFor /></Link></li>
+        <li><Link to=""><MdYoutubeSearchedFor /></Link></li>
         <li><Link to=""><IoMdBook /></Link></li>
-        <li><Link to="/settings"><BsBookmarkDash /></Link></li>
-        <li><Link to="/settings"><TbHexagonNumber0 /></Link></li>
+        <li><Link to=""><BsBookmarkDash /></Link></li>
+        <li><Link to=""><TbHexagonNumber0 /></Link></li>
       </ul>
     </nav>
   );

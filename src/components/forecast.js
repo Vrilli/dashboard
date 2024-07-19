@@ -60,37 +60,42 @@ const Forecast = () => {
   return (
     <div className="Forecast">
       <h1 className='title'>Weather Forecast for the Next 5 Days</h1>
-      {chartData && (
-        <div className='forecast-card'>
-          <Line
-            data={chartData}
-            options={{
-              responsive: true,
-              scales: {
-                y1: {
-                  type: 'linear',
-                  position: 'left',
-                  title: {
-                    display: true,
-                    text: 'Temperature (°C)',
+      <div className='forecast-container'>
+
+        {chartData && (
+          <div className='forecast-card'>
+            <Line
+              data={chartData}
+              options={{
+                responsive: true,
+                scales: {
+                  y1: {
+                    type: 'linear',
+                    position: 'left',
+                    title: {
+                      display: true,
+                      text: 'Temperature (°C)',
+                    },
                   },
-                },
-                y2: {
-                  type: 'linear',
-                  position: 'right',
-                  title: {
-                    display: true,
-                    text: 'Precipitation Probability (%)',
-                  },
-                  grid: {
-                    drawOnChartArea: false,
-                  },
+                  y2: {
+                    type: 'linear',
+                    position: 'right',
+                    title: {
+                      display: true,
+                      text: 'Precipitation Probability (%)',
+                    },
+                    grid: {
+                      drawOnChartArea: false,
+                    },
+                  }
                 }
-              }
-            }}
-          />
-        </div>
-      )}
+              }}
+            />
+          </div>
+        )}
+
+      </div>
+
     </div>
   );
 };

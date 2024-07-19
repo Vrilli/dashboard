@@ -48,24 +48,27 @@ const WeatherChart = () => {
     return (
         <div className='weather'>
             <h1 className='title'>Current Weather</h1>
-            <table className='table' border="1">
-                <thead>
-                    <tr>
-                        <th>Location</th>
-                        <th>Temperature (°C)</th>
-                        <th>Weather</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {weatherData.map((weather, index) => (
-                        <tr key={index}>
-                            <td>{weather.location}</td>
-                            <td>{weather.temperature}</td>
-                            <td>{weather.description}</td>
+            <div className='weather-chart'>
+                <table className='table' border="1">
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>Temperature (°C)</th>
+                            <th>Weather</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {weatherData.map((weather, index) => (
+                            <tr key={index}>
+                                <td>{weather.location}</td>
+                                <td>{weather.temperature}</td>
+                                <td>{weather.description}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     );
 };
